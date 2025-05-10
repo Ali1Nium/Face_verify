@@ -7,4 +7,4 @@ __pycach__/
 env/
 ENV/
 
-models
+/faceapp/models/
