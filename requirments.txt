@@ -1,0 +1,5 @@
+Django==4.2
+django-ninja==1.4.1
+django-ninja-extra==0.30.0
+deepface==c0.0.93
+numpy==2.2.5
