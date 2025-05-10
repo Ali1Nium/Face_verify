@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+from django.core.asgi import get_asgi_application
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,7 +20,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = os.getenv("DEBUG")
 SECRET_KEY = os.getenv("SECRET_KEY")
 # Application definition
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # یا هر مسیر دلخواه
+# STATICFILES_DIRS = [BASE_DIR / "static"]
 
+
+
+ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -28,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'faceapp',
+    'ninja_extra'
 ]
 
 MIDDLEWARE = [
@@ -58,9 +66,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'face_finder.wsgi.application'
-
-
+# WSGI_APPLICATION = 'face_finder.wsgi.application'
+ASGI_APPLICATION = 'face_finder.asgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 

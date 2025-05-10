@@ -24,4 +24,5 @@ api = NinjaExtraAPI()
 api.register_controllers(PersonController)
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("api/", api.urls),
 ]
