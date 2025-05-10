@@ -6,3 +6,5 @@ __pycach__/
 .venv/
 env/
 ENV/
+
+models
